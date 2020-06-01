@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 # Gemfile
 source 'https://rubygems.org'
 
-gem 'rspec'
 gem 'httparty'
+gem 'rspec'
