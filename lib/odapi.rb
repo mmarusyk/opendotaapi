@@ -8,7 +8,8 @@ class ODApi
     end
 
     def matches(options)
-      HTTParty.get("https://api.opendota.com/api/heroes/#{options[:id]}/matches")
+      response = HTTParty.get("https://api.opendota.com/api/heroes/#{options[:id]}/matches")
+      raise StandardError.new("Doesn't exists hero with ID: #{options[:id]}") if response.empty?
     end
   end
 end
