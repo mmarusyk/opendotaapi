@@ -8,7 +8,7 @@ module ODApi
 
     class << self
       # GET heroues
-      def heroes(api_key = '')
+      def heroes(api_key = nil)
         if api_key
           HTTParty.get("https://api.opendota.com/api/heroes?api_key=#{api_key}")
         else
@@ -17,7 +17,7 @@ module ODApi
       end
 
       # GET matches
-      def matches(params, api_key = '')
+      def matches(params, api_key = nil)
         if api_key
           response = HTTParty.get("https://api.opendota.com/api/heroes/#{params[:id]}/matches?api_key=#{api_key}")
         else
